@@ -82,6 +82,59 @@ constexpr int IDLE_DELAY_MS = 50;      // Boşta bekleme süresi
 constexpr int THREAD_TIMEOUT_MS = 1000; // Thread timeout
 ```
 
+## 🔍 Adres Bulma Rehberi
+
+### Video Rehberi: Oyun Adreslerini Bulma
+
+Metin2'de doğru memory offset'lerini bulmak kritik öneme sahiptir. Aşağıdaki video, Cheat Engine kullanarak gerekli adresleri nasıl bulacağınızı adım adım göstermektedir:
+
+> **📹 [https://youtu.be/02MO3TiyRMA]**
+> 
+> **Video İçeriği:**
+> - Cheat Engine kurulumu ve ayarları
+> - Process'e attach olma
+> - Memory scanning teknikleri
+> - Pointer chain bulma
+> - Offset hesaplama
+> - Static address tespiti
+
+### Bulunması Gereken Ana Adresler
+
+Video'da gösterilen adresler:
+
+#### 🎯 Temel Pointer'lar
+```cpp
+NET_POINTER_OFFSET     = 0x6C3320   // Ana net pointer
+CPYTHON_PLAYER_OFFSET  = 0x6FD4C4   // Player instance pointer
+TARGET_VID_OFFSET      = 0x00A3A74  // Seçili hedef VID
+```
+
+#### ⚔️ Battle Functions
+```cpp
+BATTLE_CALL_OFFSET     = 0x0E25B0   // Attack fonksiyonu
+```
+
+### Adres Doğrulama
+
+Bulunan adresleri test etmek için:
+
+1. **Cheat Engine'de değerleri kontrol edin**
+2. **Debug mode'da output'ları inceleyin**
+3. **Farklı karakterlerle test yapın**
+4. **Game restart sonrası adresleri yeniden kontrol edin**
+
+### Version Farklılıkları
+
+> ⚠️ **Önemli**: Her Metin2 client versiyonu farklı adresler kullanabilir. Video'daki adresler belirli bir versiyon içindir. Kendi client'ınız için adresleri yeniden bulmanız gerekebilir.
+
+### Alternatif Yöntemler
+
+Video'ya ek olarak adresleri bulmanın diğer yolları:
+- **IDA Pro** ile static analysis
+- **x64dbg** ile dynamic analysis  
+- **API Monitor** ile function call tracking
+- **Process Monitor** ile file/registry monitoring
+
 ## 🎮 Kullanım
 
 ### Başlatma
